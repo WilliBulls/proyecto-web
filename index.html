@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página de Inicio de Sesión</title>
+  <style>
+    body {
+      background-image: url("https://cdn.wallpapersafari.com/8/1/FqEYG7.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-panel {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .login-panel img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .login-panel input[type="text"],
+    .login-panel input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .login-panel button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+    .login-panel button:last-child {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="login-panel">
+    <img src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" alt="Imagen de perfil">
+    <form action="validar.php" method="POST" onsubmit="return validarFormulario();">
+      <input type="text" name="usuario" placeholder="Usuario">
+      <input type="password" name="contrasena" placeholder="Contraseña">
+      <button type="submit" name="submit">Entrar</button>
+      <button>Recuperar Contraseña</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

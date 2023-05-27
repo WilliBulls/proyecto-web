@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tienda Online</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+    #contenido {
+      text-align: center;
+      margin-top: 20px;
+    }
+    table {
+      margin: 0 auto;
+    }
+    td {
+      padding: 10px;
+    }
+    #carrito {
+      text-align: center;
+      margin-top: 20px;
+    }
+    #tablaCarrito {
+      margin-bottom: 10px;
+    }
+    button {
+      margin-top: 10px;
+    }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+  </style>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+  <script>
+    function agregarAlCarrito(producto) {
+      var tablaCarrito = document.getElementById("tablaCarrito");
+      var fila = tablaCarrito.insertRow();
+      var celda = fila.insertCell();
+      celda.innerHTML = producto;
+    }
+    function comprar() {
+      var tablaCarrito = document.getElementById("tablaCarrito");
+      var productos = [];
+
+      // Obtener los productos del carrito
+      for (var i = 0; i < tablaCarrito.rows.length; i++) {
+        var producto = tablaCarrito.rows[i].cells[0].innerHTML;
+        productos.push(producto);
+      }
+
+      // Crear un nuevo objeto jsPDF
+      var doc = new jsPDF();
+
+      // Agregar el contenido al PDF
+      doc.setFontSize(16);
+      doc.text("Carrito de Compra", 10, 10);
+      doc.setFontSize(12);
+      for (var j = 0; j < productos.length; j++) {
+        doc.text((j + 1) + ". " + productos[j], 10, 20 + (j * 10));
+      }
+
+      // Guardar el PDF como archivo
+      doc.save("carrito.pdf");
+    }
+  </script>
+</head>
+<body style="background-image: url('https://img.freepik.com/fotos-premium/cielo-azul-claro-fondo-estilo-anime_398492-403.jpg'); background-size: cover; background-attachment: fixed;"
+
+        background-size: cover;
+
+>
+  <header>
+     <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="juegos.html">Juegos</a></li>
+                <li><a href="mangas.html">Mangas</a></li>
+                <li><a href="#">Información</a></li>
+            </ul>
+        </nav>
+  </header>
+  <div id="contenido">
+    <table>
+<tr>
+        <td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Halo CE PC 2002')">Agregar al carrito</button>
+        </td>
+        <!-- Repite estas celdas para los demás productos -->
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Halo CE PC 2002 solo campaña')">Agregar al carrito</button>
+        </td>
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Halo CE android 2002')">Agregar al carrito</button>
+        </td>
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Halo CE')" >Agregar al carrito</button>
+        </td>
+      </tr>
+
+<!--    ---------------------------------------------------  -->
+      <tr>
+        <td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Halo 2 pc')">Agregar al carrito</button>
+        </td>
+        <!-- Repite estas celdas para los demás productos -->
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Halo 2 multiplayer')">Agregar al carrito</button>
+        </td>
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Halo 2 campaña)">Agregar al carrito</button>
+        </td>
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Halo multimay')" >Agregar al carrito</button>
+        </td>
+      </tr>
+
+<!--    ---------------------------------------------------  -->
+      <tr>
+        <td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Producto 1')">Agregar al carrito</button>
+        </td>
+        <!-- Repite estas celdas para los demás productos -->
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Producto 1')">Agregar al carrito</button>
+        </td>
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Producto 1')">Agregar al carrito</button>
+        </td>
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Producto 1')">Agregar al carrito</button>
+        </td>
+      </tr>
+
+<!--    ---------------------------------------------------  -->
+      <tr>
+        <td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Producto 1')">Agregar al carrito</button>
+        </td>
+        <!-- Repite estas celdas para los demás productos -->
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Producto 1')">Agregar al carrito</button>
+        </td>
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Producto 1')">Agregar al carrito</button>
+        </td>
+<td>
+          <img src="imagen1.jpg" alt="Imagen del producto" style="width: 200px; height: 300px;">
+          <br>
+          <button onclick="agregarAlCarrito('Producto 1')">Agregar al carrito</button>
+        </td>
+      </tr>
+
+      <!-- Repite las filas y las celdas para crear una tabla de 4x4 -->
+    </table>
+  </div>
+  <div id="carrito">
+<img src="carrito.png" alt="Imagen"  style="width: 40px; height: 40px; display: block; margin: 0 auto;" >
+    <h2>Carrito de Compra</h2>
+    <table id="tablaCarrito">
+      <!-- Aquí se mostrarán los productos agregados al carrito -->
+    </table>
+    <button onclick="window.location.href='compra.html'">Comprar</button>
+  </div>
+</body>
+</html>
